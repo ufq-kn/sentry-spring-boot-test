@@ -25,7 +25,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         customErrorResponse.setStatusCode(HttpStatus.BAD_REQUEST.value());
         customErrorResponse.setTimestamps(new Date().toString());
         Sentry.captureException(exception);
-        
+
         return new ResponseEntity<>(customErrorResponse, HttpStatus.NOT_FOUND);
     }
 
