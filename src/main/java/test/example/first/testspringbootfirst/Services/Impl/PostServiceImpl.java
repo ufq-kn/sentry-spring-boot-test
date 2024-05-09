@@ -77,7 +77,6 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostPDO postById(Long id) {
-        System.out.println(id);
        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("post", "id", id+""));
        PostPDO postPDO = mapToDTO(post);
        return postPDO;
