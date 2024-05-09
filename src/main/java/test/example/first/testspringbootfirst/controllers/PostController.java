@@ -55,7 +55,9 @@ public class PostController {
 
     @PostMapping("/post/store")
     public ResponseEntity<CustomResponse> store(@RequestBody PostPDO postPDO) {
-
+        int i = 0;
+        int a = 10;
+        int s = (a/i);
         PostPDO newPostPDO = postService.createPost(postPDO);
         ArrayList<PostPDO> arrayList = new ArrayList<>();
         arrayList.add(newPostPDO);
